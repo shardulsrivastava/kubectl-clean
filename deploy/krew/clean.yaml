@@ -23,14 +23,12 @@ spec:
         - darwin
         - linux
     # 'uri' specifies .zip or .tar.gz archive URL of a plugin
-    uri: https://github.com/shardulsrivastava/kubectl-clean/archive/refs/tags/v0.0.1.zip
+    uri: https://github.com/shardulsrivastava/kubectl-clean/archive/refs/tags/v0.0.1.tar.gz
     # 'sha256' is the sha256sum of the url above
-    sha256: da39a3ee5e6b4b0d3255bfef95601890afd80709
+    sha256: a8b26d23596596e9221fafdeaf351c3bb4142d234eb56a03a385aa5e7501e090
     # 'files' lists which files should be extracted out from downloaded archive
     files:
-    - from: "kubectl-clean/kubectl-clean"
-      to: "./kubectl-clean"
-    - from: "LICENSE"
+    - from: "/kubectl-clean-0.0.1/*"
       to: "."
     # 'bin' specifies the path to the the plugin executable among extracted files
     bin: kubectl-clean
