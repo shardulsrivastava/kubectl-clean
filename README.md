@@ -12,3 +12,16 @@ cd kubectl-clean
 mv kubectl-clean/kubectl-clean /usr/local/bin
 kubectl clean --help
 ```
+
+### Usage
+
+To delete all the terminated pods in a namespace in a cluster: 
+```bash
+kubectl clean <NAMESPACE>
+```
+
+To delete the terminated pods from all the namespaces in a cluster:
+
+```bash
+kubectl clean all
+```
