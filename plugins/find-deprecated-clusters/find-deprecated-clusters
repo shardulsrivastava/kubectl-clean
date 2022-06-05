@@ -24,7 +24,7 @@ function blue() {
 }
 
 function print_usage() {
-    echo -e "\033[1;32mUsage:\033[0m $0 \033[1;33m <GCP Folder Id> <GKE Minimum Version> \033[0m"
+    echo -e "\033[1;32mUsage:\033[0m $0 \033[1;33m <GCP Folder Id> <GKE Minimum Version(optional)> \033[0m"
     echo -e "\033[1;32mExample:\033[0m $0 \033[1;33m 907623304376 1.24 \033[0m"
 
 }
@@ -36,9 +36,9 @@ if [[ -z "${1:-}" || "${1:- }" == "-h" || "${1:- }" == "--help" || "${1:- }" == 
     exit 0
 fi
 
-DEFAULT_GKE_MINIMUM_VERSION="1.21"
+DEFAULT_GKE_MINIMUM_VERSION="1.22"
 GCP_FOLDER_ID="${1:-}"
-GKE_MINIMUM_VERSION="${2:-DEFAULT_GKE_MINIMUM_VERSION}"
+GKE_MINIMUM_VERSION="${2:-$DEFAULT_GKE_MINIMUM_VERSION}"
 
 GCP_FOLDER_NAME="$(gcloud resource-manager folders describe "${GCP_FOLDER_ID}" --format 'csv[no-heading](displayName)')"
 
