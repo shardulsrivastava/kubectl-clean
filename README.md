@@ -11,8 +11,8 @@ A `kubectl` plugin that cleans all the terminated pods in your cluster.
 
 ```bash
 git clone git@github.com:shardulsrivastava/kubectl-plugin.git
-cd plugins/kubectl-clean
-mv kubectl-clean/kubectl-clean /usr/local/bin
+cd kubectl-plugin/plugins/kubectl-clean
+mv kubectl-clean /usr/local/bin
 kubectl clean --help
 ```
 
@@ -39,8 +39,8 @@ A `kubectl` plugin that checks for GKE clusters using deprecated versions of Kub
 
 ```bash
 git clone git@github.com:shardulsrivastava/kubectl-plugin.git
-cd plugins/find-deprecated-clusters
-mv find-deprecated-clusters/find-deprecated-clusters /usr/local/bin
+cd kubectl-plugin/plugins/find-deprecated-clusters
+mv kubectl-find-deprecated-clusters /usr/local/bin
 kubectl find-deprecated-clusters --help
 ```
 
