@@ -29,9 +29,9 @@ To delete the terminated pods from all the namespaces in a cluster:
 kubectl clean all
 ```
 
-## kubectl-find-deprecated-clusters
+## kubectl-gke-outdated
 
-A `kubectl` plugin that checks for GKE clusters using deprecated versions of Kubernetes inside a GCP folder.
+A `kubectl` plugin that checks for GKE clusters using outdated versions of Kubernetes inside a GCP folder.
 
 ### Quick Start
 
@@ -39,20 +39,20 @@ A `kubectl` plugin that checks for GKE clusters using deprecated versions of Kub
 
 ```bash
 git clone git@github.com:shardulsrivastava/kubectl-plugin.git
-cd kubectl-plugin/plugins/find-deprecated-clusters
-mv kubectl-find-deprecated-clusters print-table /usr/local/bin
-kubectl find-deprecated-clusters --help
+cd kubectl-plugin/plugins/gke-outdated
+mv kkubectl-gke_outdated print-table /usr/local/bin
+kubectl gke-outdated --help
 ```
 
 ### Usage
 
-To check for all the clusters running kubernetes version lower than `1.20` inside folder Id `xyz` : 
+To check all the GKE clusters running outdated kubernetes version inside folder Id `xyz` : 
 ```bash
-kubectl find-deprecated-clusters <GCP Folder Id> <GKE Minimum Version(optional)> 
+kubectl gke-outdated <GCP Folder Id> <GKE Minimum Version(optional)> 
 ```
 
-To delete the terminated pods from all the namespaces in a cluster:
+To check all the GKE clusters inside folder id `907623304376` running kubernetes version lower than `1.22` :
 
 ```bash
-kubectl find-deprecated-clusters 907623304376 1.21
+kubectl gke-outdated 907623304376 1.22
 ```
