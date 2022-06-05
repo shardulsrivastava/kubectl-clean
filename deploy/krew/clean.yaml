@@ -25,7 +25,7 @@ spec:
     # 'uri' specifies .zip or .tar.gz archive URL of a plugin
     uri: https://github.com/shardulsrivastava/kubectl-clean/archive/refs/tags/v0.0.1.tar.gz
     # 'sha256' is the sha256sum of the url above
-    sha256: a8b26d23596596e9221fafdeaf351c3bb4142d234eb56a03a385aa5e7501e090
+    sha256: f4cd303cd22ba7b62ac23f628aaf0a51634e4b25367053252067ab89605c2e93
     # 'files' lists which files should be extracted out from downloaded archive
     files:
     - from: "/kubectl-clean-0.0.1/*"
