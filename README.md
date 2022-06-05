@@ -40,7 +40,7 @@ A `kubectl` plugin that checks for GKE clusters using outdated versions of Kuber
 ```bash
 git clone git@github.com:shardulsrivastava/kubectl-plugin.git
 cd kubectl-plugin/plugins/gke-outdated
-mv kkubectl-gke_outdated print-table /usr/local/bin
+mv kubectl-gke_outdated print-table /usr/local/bin
 kubectl gke-outdated --help
 ```
 
