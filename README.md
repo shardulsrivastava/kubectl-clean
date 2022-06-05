@@ -54,5 +54,5 @@ kubectl find-deprecated-clusters <GCP Folder Id> <GKE Minimum Version(optional)>
 To delete the terminated pods from all the namespaces in a cluster:
 
 ```bash
-kubectl clean all
+kubectl find-deprecated-clusters 907623304376 1.21
 ```

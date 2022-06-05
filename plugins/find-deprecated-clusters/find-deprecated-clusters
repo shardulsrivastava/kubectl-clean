@@ -36,7 +36,7 @@ if [[ -z "${1:-}" || "${1:- }" == "-h" || "${1:- }" == "--help" || "${1:- }" == 
     exit 0
 fi
 
-DEFAULT_GKE_MINIMUM_VERSION="1.22"
+DEFAULT_GKE_MINIMUM_VERSION="1.21"
 GCP_FOLDER_ID="${1:-}"
 GKE_MINIMUM_VERSION="${2:-$DEFAULT_GKE_MINIMUM_VERSION}"
 
