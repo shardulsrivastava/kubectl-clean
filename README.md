@@ -1,10 +1,13 @@
-# kubectl-clean
+# Kubectl Plugins
+
+
+## kubectl-clean
 
 A `kubect` plugin that cleans all the terminated pods in your cluster.
 
-## Quick Start
+### Quick Start
 
-### From Source
+#### From Source
 
 ```bash
 git clone git@github.com:shardulsrivastava/kubectl-clean.git
