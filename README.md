@@ -40,7 +40,7 @@ A `kubectl` plugin that checks for GKE clusters using deprecated versions of Kub
 ```bash
 git clone git@github.com:shardulsrivastava/kubectl-plugin.git
 cd kubectl-plugin/plugins/find-deprecated-clusters
-mv kubectl-find-deprecated-clusters /usr/local/bin
+mv kubectl-find-deprecated-clusters print-table /usr/local/bin
 kubectl find-deprecated-clusters --help
 ```
 

@@ -28,8 +28,6 @@ function print_usage() {
     echo -e "\033[1;32mExample:\033[0m $0 \033[1;33m 907623304376 1.24 \033[0m"
 
 }
-# optional argument handling
-
 
 if [[ -z "${1:-}" || "${1:- }" == "-h" || "${1:- }" == "--help" || "${1:- }" == "-help" ]]; then
     print_usage
