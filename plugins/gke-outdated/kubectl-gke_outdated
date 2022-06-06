@@ -45,7 +45,7 @@ green "Getting all the clusters under folder => ${GCP_FOLDER_NAME}"
 GKE_CLUSTERS=($(gcloud beta asset list --folder="${GCP_FOLDER_ID}" --format="csv[no-heading](name)" --asset-types='container.googleapis.com/Cluster'))
 
 {
-    echo -e 'GCP Project ID\tGKE Cluster Name\tMaster Version\tNode Version\n';
+    echo -e 'GCP Project ID\tGKE Cluster Name\tCluster Type\tMaster Version\tNode Version\n';
     for GKE_CLUSTER in "${GKE_CLUSTERS[@]}"; do
         GKE_CLUSTER="${GKE_CLUSTER##//container.googleapis.com/projects/}"
 
@@ -56,7 +56,9 @@ GKE_CLUSTERS=($(gcloud beta asset list --folder="${GCP_FOLDER_ID}" --format="csv
 
         GKE_CLUSTER_NAME="$(echo "${GKE_CLUSTER}" | cut  -d '/' -f 5)"
 
+        GKE_CLUSTER_TYPE="Regional"
         if [[ ${GCP_LOCATION} == "zones" ]]; then
+            GKE_CLUSTER_TYPE="Zonal"
             LOCATION="--zone ${GKE_LOCATION}"
         else
             LOCATION="--region ${GKE_LOCATION}"
@@ -70,10 +72,10 @@ GKE_CLUSTERS=($(gcloud beta asset list --folder="${GCP_FOLDER_ID}" --format="csv
         GKE_CLUSTER_NODE_MAJOR_VERSION="$(echo "${GKE_CLUSTER_NODE_VERSION##-}" | cut  -d '.' -f 2)"
 
         if (( "${GKE_CLUSTER_NODE_MAJOR_VERSION}" < "${GKE_MINIMUM_VERSION##*.}" )); then
-            printf '%s\t%s\t%s\t%s\n' "${GCP_PROJECT_ID}" "${GKE_CLUSTER}" "${GKE_CLUSTER_MASTER_VERSION}" "${GKE_CLUSTER_NODE_VERSION}";
+            printf '%s\t%s\t%s\t%s\t%s\n' "${GCP_PROJECT_ID}" "${GKE_CLUSTER_NAME}" "${GKE_CLUSTER_TYPE}" "${GKE_CLUSTER_MASTER_VERSION}" "${GKE_CLUSTER_NODE_VERSION}";
         fi
 
     done
 
-} | prettytable 4 green
+} | prettytable 5 green
 
