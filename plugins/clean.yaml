@@ -8,7 +8,7 @@ spec:
   # 'version' is a valid semantic version string (see semver.org). Note the prefix 'v' is required.
   version: "v0.0.1"
   # 'homepage' usually links to the GitHub repository of the plugin
-  homepage: https://github.com/shardulsrivastava/kubectl-clean
+  homepage: https://github.com/shardulsrivastava/kubectl-plugin
   # 'shortDescription' explains what the plugin does in only a few words
   shortDescription: "Cleans up orphaned pods in the cluster."
   description: |
@@ -23,12 +23,12 @@ spec:
         - darwin
         - linux
     # 'uri' specifies .zip or .tar.gz archive URL of a plugin
-    uri: https://github.com/shardulsrivastava/kubectl-clean/archive/refs/tags/v0.0.1.tar.gz
+    uri: https://github.com/shardulsrivastava/kubectl-plugin/archive/refs/tags/v0.0.1.tar.gz
     # 'sha256' is the sha256sum of the url above
     sha256: f4cd303cd22ba7b62ac23f628aaf0a51634e4b25367053252067ab89605c2e93
     # 'files' lists which files should be extracted out from downloaded archive
     files:
-    - from: "/kubectl-clean-0.0.1/*"
+    - from: "/kubectl-plugin-0.0.1/plugins/clean/*"
       to: "."
     # 'bin' specifies the path to the the plugin executable among extracted files
     bin: kubectl-clean
