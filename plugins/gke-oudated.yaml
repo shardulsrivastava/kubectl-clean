@@ -3,16 +3,16 @@ kind: Plugin
 metadata:
   # 'name' must match the filename of the manifest. The name defines how
   # the plugin is invoked, for example: `kubectl restart`
-  name: clean
+  name: gke-outdated
 spec:
   # 'version' is a valid semantic version string (see semver.org). Note the prefix 'v' is required.
   version: "v0.0.1"
   # 'homepage' usually links to the GitHub repository of the plugin
   homepage: https://github.com/shardulsrivastava/kubectl-plugin
   # 'shortDescription' explains what the plugin does in only a few words
-  shortDescription: "Cleans up orphaned pods in the cluster."
+  shortDescription: "Shows all the oudated clusters in a GCP folder."
   description: |
-    Cleans up orphaned pods in the cluster.   
+    Shows all the oudated clusters in a GCP folder.  
   # 'platforms' specify installation methods for various platforms (os/arch)
   platforms:
   - selector:
@@ -28,7 +28,7 @@ spec:
     sha256: f4cd303cd22ba7b62ac23f628aaf0a51634e4b25367053252067ab89605c2e93
     # 'files' lists which files should be extracted out from downloaded archive
     files:
-    - from: "/kubectl-plugin-0.0.1/plugins/clean/*"
+    - from: "/kubectl-plugin-0.0.1/plugins/gke-outdated/*"
       to: "."
     # 'bin' specifies the path to the the plugin executable among extracted files
-    bin: kubectl-clean
+    bin: kubectl-gke_outdated

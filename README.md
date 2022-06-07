@@ -11,7 +11,7 @@ A `kubectl` plugin that cleans all the terminated pods in your cluster.
 
 ```bash
 git clone git@github.com:shardulsrivastava/kubectl-plugin.git
-cd kubectl-plugin/plugins/kubectl-clean
+cd kubectl-plugin/plugins/clean
 mv kubectl-clean /usr/local/bin
 kubectl clean --help
 ```

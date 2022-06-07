@@ -24,8 +24,8 @@ function blue() {
 }
 
 function print_usage() {
-    echo -e "\033[1;32mUsage:\033[0m $0 \033[1;33m <GCP Folder Id> <GKE Minimum Version(optional)> \033[0m"
-    echo -e "\033[1;32mExample:\033[0m $0 \033[1;33m 907623304376 1.24 \033[0m"
+    echo -e "\033[1;32mUsage:\033[0m kubectl gke-outdated \033[1;33m <GCP Folder Id> <GKE Minimum Version(optional)> \033[0m"
+    echo -e "\033[1;32mExample:\033[0m kubectl gke-outdated \033[1;33m 907623304376 1.24 \033[0m"
 
 }
 
@@ -42,7 +42,7 @@ GCP_FOLDER_NAME="$(gcloud resource-manager folders describe "${GCP_FOLDER_ID}" -
 
 green "Getting all the clusters under folder => ${GCP_FOLDER_NAME}"
 
-GKE_CLUSTERS=($(gcloud beta asset list --folder="${GCP_FOLDER_ID}" --format="csv[no-heading](name)" --asset-types='container.googleapis.com/Cluster'))
+GKE_CLUSTERS=($(gcloud asset list --folder="${GCP_FOLDER_ID}" --format="csv[no-heading](name)" --asset-types='container.googleapis.com/Cluster'))
 
 {
     echo -e 'GCP Project ID\tGKE Cluster Name\tCluster Type\tMaster Version\tNode Version\n';
